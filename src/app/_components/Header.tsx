@@ -1,9 +1,7 @@
 export const Header = () => {
   return (
-    <div className="flex flex-row h-20 border-b border-solid border-gray-600">
-      <div className="my-auto">
-        <p className="font-sans text-bold text-white">gluttony</p>
-      </div>
-    </div>
+    <header className="px-24 py-8 border-b border-solid border-gray-600">
+      <p className="font-sans text-bold text-white">gluttony</p>
+    </header>
   )
 }
