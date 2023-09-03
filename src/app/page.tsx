@@ -14,9 +14,6 @@ const cardSample = [
   {
     img: '/images/Witness.jpg',
   },
-  {
-    img: '/images/ランドマーク.jpg',
-  },
 ]
 
 export default function Home() {
