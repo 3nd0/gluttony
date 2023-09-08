@@ -1,13 +1,12 @@
 FROM golang:1.21.0-alpine3.18 as dev
 
-ENV ROOT=/go/src/app
-ENV CGO_ENABLED 0
+ENV ROOT=/src/app
 WORKDIR ${ROOT}
 
-RUN apk update && apk add git
-RUN go mod init gluttony_server && go mod tidy
-COPY go.mod go.sum ./
-RUN go mod download
+RUN apk update && apk add git && apk add bash && apk add vim
+
+# Migrate host files to container working directory
+COPY ./src/server ${ROOT}
 EXPOSE 8080
 
 CMD ["go", "run", "main.go"]
